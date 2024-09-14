@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -140,61 +142,89 @@
             ให้ดีก่อนจะตัดสินใจเลี้ยง 
         </p>
         <!DOCTYPE html>
-<html lang="th">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ตัวอย่างการใส่รูปภาพ</title>
-  <link href="k/10.jfif" rel="stylesheet">
-  <style>
-    .image-container {
-      position: relative;
-      width: 100%;
-      max-width: 300px; /* ปรับขนาดสูงสุดตามต้องการ */
-      margin: auto;
-    }
-    .image-container img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-    .image-container .caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      border-radius: 0 0 8px 8px;
-    }
-  </style>
-</head>
-<body>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Image Gallery</title>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+            <style>
+                /* Fade-up animation */
+                @keyframes fadeUp {
+                    0% {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    100% {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+        
+                .image-container {
+                    position: relative;
+                    overflow: hidden;
+                    border-radius: 8px;
+                    animation: fadeUp 3s ease forwards; /* Apply animation */
+                }
+        
+                .image-container img {
+                    width: 100%;
+                    height: auto;
+                    transition: transform 0.3s ease;
+                }
+        
+                .image-container:hover img {
+                    transform: scale(1.05);
+                }
+        
+                .caption {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: rgba(0, 0, 0, 0.6);
+                    color: #fff;
+                    text-align: center;
+                    padding: 10px;
+                    font-size: 14px;
+                    border-top: 2px solid #fff;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="image-container">
+                            <img src="k/13.jfif" alt="พ่อพันธุ์ของฟาร์ม (น้องชาโค)">
+                            <div class="caption">พ่อพันธุ์ของฟาร์ม (น้องชาโค)</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="image-container">
+                            <img src="k/14.jfif" alt="แม่พันธุ์ของฟาร์ม (น้องสายไหม)">
+                            <div class="caption">แม่พันธุ์ของฟาร์ม (น้องสายไหม)</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="image-container">
+                            <img src="k/16.jfif" alt="ลูกตัวแรกของฟาร์ม (น้องชาไทย)">
+                            <div class="caption">ลูกตัวแรกของฟาร์ม (น้องชาไทย)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        </body>
+        </html>
+        
 
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-lg-4 col-md-6 mb-4">
-      <div class="image-container">
-        <img src="k/13.jfif" alt="รูปภาพตัวอย่าง">
-        <div class="caption">พ่อพันธุ์ของฟาร์ม (น้องชาโค)</div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-6 mb-4">
-      <div class="image-container">
-        <img src="k/14.jfif" alt="รูปภาพตัวอย่าง">
-        <div class="caption">แม่พันธุ์ของฟาร์ม (น้องสายไหม)</div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-6 mb-4">
-      <div class="image-container">
-        <img src="k/16.jfif" alt="รูปภาพตัวอย่าง">
-        <div class="caption">ลูกตัวแรกของฟาร์ม (น้องชาไทย)</div>
-      </div>
-    </div>
-  </div>
-</div>
+
+
 
 
 
@@ -209,7 +239,9 @@
 
     
       </div>
-         
+      <script>
+        AOS.init();
+      </script>
        <!---------------------------------- ปิด product ----------------------------------------------------------------------------------------->
      
 </body>
